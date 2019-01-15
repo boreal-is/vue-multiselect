@@ -58,8 +58,12 @@ export default {
         { 'multiselect__option--group-selected': this.wholeGroupSelected(group) }
       ]
     },
-    addPointerElement ({ key } = 'Enter') {
+    addPointerElement ({ key, ctrlKey, stopPropagation } = 'Enter') {
       /* istanbul ignore else */
+      if (ctrlKey) {
+        return
+      }
+      stopPropagation()
       if (this.filteredOptions.length > 0) {
         this.select(this.filteredOptions[this.pointer], key)
       }
