@@ -664,6 +664,7 @@ export default {
       if (!this.isOpen) return
 
       this.isOpen = false
+      this.isFocus = false
       /* istanbul ignore else  */
       if (this.searchable) {
         this.$refs.search.blur()
