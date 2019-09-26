@@ -629,7 +629,7 @@ export default {
       if (this.isFocus || this.disabled) return
 
       this.isFocus = true
-      this.$emit('focus', this.id)
+      this.$emit('focusEvent', this.isFocus)
     },
     /**
      * Opens the multiselect’s dropdown.
