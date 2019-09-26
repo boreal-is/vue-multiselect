@@ -629,6 +629,7 @@ export default {
       if (this.isFocus || this.disabled) return
 
       this.isFocus = true
+      console.log('adasasd')
       this.$emit('focusEvent', this.isFocus)
     },
     /**
