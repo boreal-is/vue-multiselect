@@ -66,6 +66,7 @@ export default {
     return {
       search: '',
       isOpen: false,
+      isFocus: false,
       prefferedOpenDirection: 'below',
       optimizedHeight: this.maxHeight
     }
@@ -618,6 +619,17 @@ export default {
       if (this.search.length === 0 && Array.isArray(this.internalValue)) {
         this.removeElement(this.internalValue[this.internalValue.length - 1], false)
       }
+    },
+    /**
+     * On focus the multiselect’s dropdown.
+     * Sets a class to say it's focus
+     */
+    focus () {
+      /* istanbul ignore else */
+      if (this.isFocus || this.disabled) return
+
+      this.isFocus = true
+      this.$emit('focus', this.id)
     },
     /**
      * Opens the multiselect’s dropdown.

@@ -1,7 +1,7 @@
 <template>
   <div
     :tabindex="searchable ? -1 : tabindex"
-    :class="{ 'multiselect--active': isOpen, 'multiselect--disabled': disabled, 'multiselect--above': isAbove }"
+    :class="{ 'multiselect--active': isOpen, 'multiselect--disabled': disabled, 'multiselect--above': isAbove, 'multiselect--focus': isFocus }"
     @click="activate()"
     @blur="searchable ? false : deactivate()"
     @keydown.self="activate()"
@@ -49,6 +49,7 @@
           :tabindex="tabindex"
           @input="updateSearch($event.target.value)"
           @click.prevent="activate()"
+          @focus.prevent="focus()"
           @blur.prevent="deactivate()"
           @keyup.esc="deactivate()"
           @keydown="activate()"
