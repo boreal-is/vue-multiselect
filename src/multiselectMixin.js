@@ -639,7 +639,7 @@ export default {
       /* istanbul ignore else */
       if (this.isOpen || this.disabled) return
 
-      if (key && !key.match(/^(ArrowDown|enter|[a-z0-9])\b/gi)) return
+      if (key && key.match(/^(backspace|ScrollLock|Meta|Control|unidentified|tab|shift|ctrl|alt|pause|break|CapsLock|escape|PageUp|PageDown|end|home|ArrowLeft|ArrowRight|ArrowUp|delete|insert)\b/gi)) return
 
       this.adjustPosition()
       /* istanbul ignore else  */
