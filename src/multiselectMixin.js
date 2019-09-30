@@ -635,9 +635,11 @@ export default {
      * Opens the multiselect’s dropdown.
      * Sets this.isOpen to TRUE
      */
-    activate (e) {
+    activate ({key}) {
       /* istanbul ignore else */
       if (this.isOpen || this.disabled) return
+
+      if (key && !key.match(/^(ArrowDown|enter|[a-z0-9])\b/gi)) return
 
       this.adjustPosition()
       /* istanbul ignore else  */
@@ -675,7 +677,7 @@ export default {
       this.$emit('close', this.getValue(), this.id)
     },
     /**
-     * Call this.activate() or this.deactivate()
+     * Call this.activate(key) or this.deactivate()
      * depending on this.isOpen value.
      *
      * @fires this#activate || this#deactivate
@@ -684,7 +686,7 @@ export default {
     toggle () {
       this.isOpen
         ? this.deactivate()
-        : this.activate()
+        : this.activate({key: null})
     },
     /**
      * Updates the hasEnoughSpace variable used for

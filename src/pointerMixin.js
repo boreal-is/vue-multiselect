@@ -64,7 +64,7 @@ export default {
         return
       }
       if (!this.isOpen) {
-        this.activate()
+        this.activate(key)
         return
       }
       if (this.filteredOptions.length > 0) {

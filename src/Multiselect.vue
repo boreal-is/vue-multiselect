@@ -7,7 +7,7 @@
     @keydown.self.down.prevent="pointerForward()"
     @keydown.self.up.prevent="pointerBackward()"
     @keydown.enter.self="addPointerElement($event)"
-    @keydown.self.prevent="activate($event)"
+    @keydown.self="activate($event)"
     @keyup.esc="deactivate()"
     class="multiselect">
       <slot name="caret" :toggle="toggle">
@@ -55,7 +55,7 @@
           @keydown.down.prevent="pointerForward()"
           @keydown.up.prevent="pointerBackward()"
           @keydown.enter.self="addPointerElement($event)"
-          @keydown.prevent="activate($event)"
+          @keydown="activate($event)"
           @keydown.delete.stop="removeLastElement()"
           class="multiselect__input"/>
         <span
