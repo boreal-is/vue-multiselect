@@ -635,7 +635,7 @@ export default {
      * Opens the multiselect’s dropdown.
      * Sets this.isOpen to TRUE
      */
-    activate () {
+    activate (e) {
       /* istanbul ignore else */
       if (this.isOpen || this.disabled) return
 

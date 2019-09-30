@@ -2,12 +2,12 @@
   <div
     :tabindex="searchable ? -1 : tabindex"
     :class="{ 'multiselect--active': isOpen, 'multiselect--disabled': disabled, 'multiselect--above': isAbove, 'multiselect--focus': isFocus }"
-    @click="activate()"
+    @click="activate($event)"
     @blur="searchable ? false : deactivate()"
-    @keydown.self="activate()"
     @keydown.self.down.prevent="pointerForward()"
     @keydown.self.up.prevent="pointerBackward()"
     @keydown.enter.self="addPointerElement($event)"
+    @keydown.self.prevent="activate($event)"
     @keyup.esc="deactivate()"
     class="multiselect">
       <slot name="caret" :toggle="toggle">
@@ -48,14 +48,14 @@
           :disabled="disabled"
           :tabindex="tabindex"
           @input="updateSearch($event.target.value)"
-          @click.prevent="activate()"
+          @click.prevent="activate($event)"
           @focus.prevent="focus()"
           @blur.prevent="deactivate()"
           @keyup.esc="deactivate()"
-          @keydown="activate()"
           @keydown.down.prevent="pointerForward()"
           @keydown.up.prevent="pointerBackward()"
           @keydown.enter.self="addPointerElement($event)"
+          @keydown.prevent="activate($event)"
           @keydown.delete.stop="removeLastElement()"
           class="multiselect__input"/>
         <span
