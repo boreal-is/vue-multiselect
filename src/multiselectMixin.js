@@ -663,10 +663,12 @@ export default {
      */
     deactivate () {
       /* istanbul ignore else */
+      this.isFocus = false
+      this.$emit('focusEvent', this.isFocus)
+
       if (!this.isOpen) return
 
       this.isOpen = false
-      this.isFocus = false
       /* istanbul ignore else  */
       if (this.searchable) {
         this.$refs.search.blur()
@@ -675,6 +677,7 @@ export default {
       }
       if (!this.preserveSearch) this.search = ''
       this.$emit('close', this.getValue(), this.id)
+
     },
     /**
      * Call this.activate(key) or this.deactivate()
