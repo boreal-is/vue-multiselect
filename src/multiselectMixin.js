@@ -32,7 +32,8 @@ function flattenOptions (values, label) {
       if (curr[values] && curr[values].length) {
         prev.push({
           $groupLabel: curr[label],
-          $isLabel: true
+          $isLabel: true,
+          $data: curr
         })
         return prev.concat(curr[values])
       }
@@ -53,7 +54,8 @@ function filterGroups (search, label, values, groupLabel, customLabel) {
       return groupOptions.length
         ? {
           [groupLabel]: group[groupLabel],
-          [values]: groupOptions
+          [values]: groupOptions,
+          ...group
         }
         : []
     })
@@ -677,7 +679,6 @@ export default {
       }
       if (!this.preserveSearch) this.search = ''
       this.$emit('close', this.getValue(), this.id)
-
     },
     /**
      * Call this.activate(key) or this.deactivate()
