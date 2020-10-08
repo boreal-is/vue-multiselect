@@ -31,6 +31,12 @@ h2.typo__h2#sub-slots(data-section) Slots
             br
             strong  Default: No elements found. Consider changing the search query.
         tr.table__tr
+          td.table__td: strong noOptions
+          td.table__td
+            | Shows when no elements in options empty. Defaults to string:
+            br
+            strong  Default: List is empty.
+        tr.table__tr
           td.table__td: strong beforeList
           td.table__td
             | Shows before the list, when dropdown is open.
@@ -53,7 +59,7 @@ h2.typo__h2#sub-slots(data-section) Slots
         tr.table__tr
           td.table__td: strong placeholder
           td.table__td
-            | Slot for the placeholder (is not displayed when the dropdown is open and searcharble is true)
+            | Slot for the placeholder (is not displayed when the dropdown is open and `searchable` is true)
         tr.table__tr
           td.table__td: strong limit
           td.table__td

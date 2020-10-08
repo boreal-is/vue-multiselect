@@ -34,6 +34,9 @@ export default {
     },
     isOpen () {
       this.pointerDirty = false
+    },
+    pointer () {
+      this.$refs.search.setAttribute('aria-activedescendant', this.id + '-' + this.pointer.toString())
     }
   },
   methods: {
@@ -45,18 +48,21 @@ export default {
     },
     groupHighlight (index, selectedGroup) {
       if (!this.groupSelect) {
-        return ['multiselect__option--disabled']
+        return [
+          'multiselect__option--disabled',
+          { 'multiselect__option--group': selectedGroup.$isLabel }
+        ]
       }
 
       const group = this.options.find(option => {
         return option[this.groupLabel] === selectedGroup.$groupLabel
       })
 
-      return [
-        this.groupSelect ? 'multiselect__option--group' : 'multiselect__option--disabled',
+      return group && !this.wholeGroupDisabled(group) ? [
+        'multiselect__option--group',
         { 'multiselect__option--highlight': index === this.pointer && this.showPointer },
         { 'multiselect__option--group-selected': this.wholeGroupSelected(group) }
-      ]
+      ] : 'multiselect__option--disabled'
     },
     addPointerElement ({ key } = 'Enter') {
       /* istanbul ignore else */

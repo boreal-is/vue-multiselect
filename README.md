@@ -1,9 +1,32 @@
 # vue-multiselect ![Build Status](https://circleci.com/gh/shentao/vue-multiselect/tree/2.0.svg?style=shield&circle-token=5c931ff28fd12587610f835472becdd514d09cef)[![Codecov branch](https://img.shields.io/codecov/c/github/shentao/vue-multiselect/2.0.svg)](https://codecov.io/gh/shentao/vue-multiselect/branch/2.0)[![npm](https://img.shields.io/npm/v/vue-multiselect.svg)](https://www.npmjs.com/package/vue-multiselect)
 Probably the most complete *selecting* solution for Vue.js 2.0, without jQuery.
 
-![Vue-Multiselect Screen](https://raw.githubusercontent.com/shentao/vue-multiselect/2.0/multiselect-screen-203.png)
+<a href="https://vue-multiselect.js.org/">
+  <img src="/multiselect-screen-203.png" alt="Vue-Multiselect Screen">
+</a>
 
-### Features & characteristics:
+## Documentation
+Visit: [vue-multiselect.js.org](https://vue-multiselect.js.org/#sub-getting-started)
+
+## Sponsors
+
+### Silver
+
+<p align="center">
+  <a href="https://www.storyblok.com/developers?utm_source=newsletter&utm_medium=logo&utm_campaign=vuejs-newsletter" target="_blank">
+    <img src="https://a.storyblok.com/f/51376/3856x824/fea44d52a9/colored-full.png" alt="Storyblok" width="240px">
+  </a>
+</p>
+
+### Bronze
+
+<p align="center">
+  <a href="https://www.vuemastery.com/" target="_blank">
+    <img src="https://cdn.discordapp.com/attachments/258614093362102272/557267759130607630/Vue-Mastery-Big.png" alt="Vue Mastery logo" width="180px">
+  </a>
+</p>
+
+## Features & characteristics:
 * NO dependencies
 * Single select
 * Multiple select
@@ -61,7 +84,7 @@ npm install vue-multiselect
 
 ## JSFiddle
 
-[Example JSFiddle](https://jsfiddle.net/shentao/jqofkzxc/) – Use this for issue reproduction.
+[Example JSFiddle](https://jsfiddle.net/shentao/s0ugwmjp/) – Use this for issue reproduction.
 
 ## Examples
 in jade-lang/pug-lang
