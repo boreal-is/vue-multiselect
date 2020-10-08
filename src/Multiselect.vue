@@ -267,7 +267,7 @@
     },
     computed: {
       isSingleLabelVisible () {
-        return this.singleValue &&
+        return (this.singleValue || this.singleValue === 0) &&
           (!this.isOpen || !this.searchable) &&
           !this.visibleValues.length
       },
